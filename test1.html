@@ -1,0 +1,36 @@
+<html>
+<head>
+	<title>
+		test1
+	</title>
+	<link rel="stylesheet" href="style.css">
+
+</head>
+<body bgcolor="lightblue">
+		<div class ="d1">
+		<p id="t1">test</p>
+		</div>
+
+		<div class ="d1">
+		<input id="in1" type="text" placeholder="輸入">
+
+		</div>
+
+		<div class ="d1">
+		<!--<button id="b1">送出</button>-->
+		<button id="value" onclick= "togsheet();" class="button-64" role="button"><span class="text">送出</span></button>
+		</div>
+		  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+		  
+	<script>
+    	function togsheet(){
+    	var date = new Date();
+        $.get("https://script.google.com/macros/s/AKfycbw5oNYoTl4wGj5T8NPM4qUpl4MoKmDLpPD_xXwqqZvV2Lg4HAxAGdj3sEebo84EbvSE/exec", {
+                "value": document.getElementById("in1").value,
+            });
+        alert("送出成功");
+        document.getElementById("in1").value="";
+      };
+  	</script>
+</body>
+</html>
